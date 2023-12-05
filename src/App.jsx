@@ -1,11 +1,13 @@
-import { Button } from "@mui/material"
-
+import Navbar from './components/navbar/Navbar'
+import { NavLinksProvider } from './contexts/navLinks'
 
 const App = () => {
   return (
     <>
-    <h1>Portfolio</h1>
-    <Button>Mi primer botón</Button>
+      <NavLinksProvider>
+        <Navbar />
+      </NavLinksProvider>
+      <div>Portfolio</div>
     </>
   )
 }
