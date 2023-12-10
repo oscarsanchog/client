@@ -11,7 +11,7 @@ export const NavLinksProvider = ({ children }) => {
     { title: 'Sobre mí', path: '/#about', icon: <PersonIcon /> },
     // { title: 'Experiencia', path: '/#experience'},
     { title: 'Proyectos', path: '/#projects', icon: <BusinessCenterIcon /> },
-    { title: 'Tech skills', path: '/#skills', icon: <ComputerOutlinedIcon /> },
+    { title: 'Skills', path: '/#skills', icon: <ComputerOutlinedIcon /> },
     { title: 'Contacto', path: '/#contact', icon: <EmailIcon /> },
   ]
 
