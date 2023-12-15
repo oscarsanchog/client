@@ -28,16 +28,29 @@ const Navbar = () => {
 
   return (
     <>
-      <AppBar>
-        <Toolbar component='nav' sx={{ display: 'grid' }}>
+      <AppBar position='static'>
+        <Toolbar component='nav'>
           <Grid container spacing={0}>
             <Grid item xs={4} sx={{ m: 'auto' }}>
-              <List sx={{ display: { xs: 'none', sm: 'flex' } }}>
+              <IconButton
+                sx={{ display: { xs: 'flex', md: 'none' } }}
+                onClick={() => setOpen(true)}
+              >
+                <MenuIcon />
+              </IconButton>
+
+              <List
+                sx={{
+                  display: { xs: 'none', md: 'flex' },
+                  gap: 3,
+                  width: 'fit-content',
+                }}
+              >
                 {navLinksArray.map(({ title, path }) => (
                   <ListItem disablePadding key={title}>
-                    <ListItemButton sx={{ width: 91, p: 0 }} to={path}>
+                    <ListItemButton sx={{ p: 0 }} to={path}>
                       <ListItemText
-                        sx={{ textAlign: 'center' }}
+                        sx={{ whiteSpace: 'nowrap' }}
                         primary={title}
                       />
                     </ListItemButton>
@@ -46,33 +59,39 @@ const Navbar = () => {
               </List>
             </Grid>
 
-            <Grid item xs={4} sx={{ mt: 1.4, textAlign: 'center' }}>
+            <Grid item xs={4} sx={{ mt: 1, textAlign: 'center' }}>
               <Box
                 component='img'
-                src='https://res.cloudinary.com/dwadajlyw/image/upload/v1701698414/portfolio/theme/logo.png'
+                src='https://res.cloudinary.com/dwadajlyw/image/upload/v1702507432/portfolio/theme/logoSinFondo.png'
                 sx={{
-                  width: '50px',
+                  width: '70px',
                   borderRadius: '50%',
                 }}
               />
             </Grid>
 
-            <Grid item xs={4} sx={{ textAlign: 'center' }} >
-              <List sx={{ display: 'flex', gap: 4, justifyContent:'right'}}>
-                <ListItem sx={{px:0, width: '24px'}} >
-                  <ListItemButton sx={{px: 0 }} >
-                    <LinkedInIcon sx={{ m: 'auto'}} />
+            <Grid item xs={4} sx={{ textAlign: 'center', m: 'auto' }}>
+              <List
+                sx={{
+                  display: { xs: 'none', sm: 'flex' },
+                  gap: 4,
+                  justifyContent: 'right',
+                }}
+              >
+                <ListItem sx={{ px: 0, width: '24px' }}>
+                  <ListItemButton sx={{ px: 0 }}>
+                    <LinkedInIcon sx={{ m: 'auto' }} />
                   </ListItemButton>
                 </ListItem>
 
-                <ListItem sx={{px:0, width: '24px'}} >
-                  <ListItemButton sx={{px: 0, width: 24}}>
-                    <GitHubIcon  sx={{ m: 'auto' }} />
+                <ListItem sx={{ px: 0, width: '24px' }}>
+                  <ListItemButton sx={{ px: 0, width: 24 }}>
+                    <GitHubIcon sx={{ m: 'auto' }} />
                   </ListItemButton>
                 </ListItem>
 
-                <ListItem sx={{px:0, width: '24px'}} >
-                  <ListItemButton sx={{px: 0, width: 24}}>
+                <ListItem sx={{ px: 0, width: '24px' }}>
+                  <ListItemButton sx={{ px: 0, width: 24 }}>
                     <EmailIcon sx={{ m: 'auto' }} />
                   </ListItemButton>
                 </ListItem>
@@ -83,9 +102,9 @@ const Navbar = () => {
       </AppBar>
 
       <Drawer
-        sx={{ display: { xs: 'flex', sm: 'none' } }}
+        sx={{ display: { xs: 'flex', md: 'none' } }}
         open={open}
-        anchor='right'
+        anchor='left'
         onClose={() => setOpen(false)}
       >
         <NavListDrawer setOpen={setOpen} />
