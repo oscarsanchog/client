@@ -8,7 +8,7 @@ export const NavLinksContext = createContext()
 
 export const NavLinksProvider = ({ children }) => {
   const navLinksArray = [
-    { title: 'Sobre mí', path: '/#about', icon: <PersonIcon /> },
+    { title: 'Sobre mí', path: '/#home', icon: <PersonIcon /> },
     // { title: 'Experiencia', path: '/#experience'},
     { title: 'Proyectos', path: '/#projects', icon: <BusinessCenterIcon /> },
     { title: 'Skills', path: '/#skills', icon: <ComputerOutlinedIcon /> },

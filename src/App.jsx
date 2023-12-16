@@ -1,6 +1,10 @@
 import { Container } from '@mui/material'
 import Navbar from './components/navbar/Navbar'
 import { NavLinksProvider } from './contexts/navLinks'
+import Home from './view/Home'
+import Projects from './view/Projects'
+import Skills from './view/Skills'
+import Contact from './view/Contact'
 
 const App = () => {
   return (
@@ -8,25 +12,12 @@ const App = () => {
       <NavLinksProvider>
         <Navbar />
       </NavLinksProvider>
-      <Container>
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium
-          perferendis, vitae et molestias at harum magnam voluptatibus eius
-          dicta velit, ipsa nobis aspernatur autem repellat ex animi eos rerum
-          molestiae?
-        </div>
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium
-          perferendis, vitae et molestias at harum magnam voluptatibus eius
-          dicta velit, ipsa nobis aspernatur autem repellat ex animi eos rerum
-          molestiae?
-        </div>
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium
-          perferendis, vitae et molestias at harum magnam voluptatibus eius
-          dicta velit, ipsa nobis aspernatur autem repellat ex animi eos rerum
-          molestiae?
-        </div>
+
+      <Container sx={{my: '3rem'}}>
+        <Home/>
+        <Projects/>
+        <Skills/>
+        <Contact/>
       </Container>
     </>
   )
