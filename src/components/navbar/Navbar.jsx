@@ -3,16 +3,17 @@ import { useContext, useState } from 'react'
 import { NavLinksContext } from '../../contexts/navLinks'
 
 import NavListDrawer from './NavListDrawer'
+
 import {
   AppBar,
   Box,
   Drawer,
   Grid,
   IconButton,
+  Link,
   List,
   ListItem,
   ListItemButton,
-  ListItemIcon,
   ListItemText,
   Toolbar,
 } from '@mui/material'
@@ -28,7 +29,7 @@ const Navbar = () => {
 
   return (
     <>
-      <AppBar position='static'>
+      <AppBar position='sticky'>
         <Toolbar component='nav'>
           <Grid container spacing={0}>
             <Grid item xs={4} sx={{ m: 'auto' }}>
@@ -60,14 +61,16 @@ const Navbar = () => {
             </Grid>
 
             <Grid item xs={4} sx={{ mt: 1, textAlign: 'center' }}>
-              <Box
-                component='img'
-                src='https://res.cloudinary.com/dwadajlyw/image/upload/v1702507432/portfolio/theme/logoSinFondo.png'
-                sx={{
-                  width: '70px',
-                  borderRadius: '50%',
-                }}
-              />
+              <Link href='#home'>
+                <Box
+                  component='img'
+                  src='https://res.cloudinary.com/dwadajlyw/image/upload/v1702507432/portfolio/theme/logoSinFondo.png'
+                  sx={{
+                    width: '70px',
+                    borderRadius: '50%',
+                  }}
+                />
+              </Link>
             </Grid>
 
             <Grid item xs={4} sx={{ textAlign: 'center', m: 'auto' }}>
