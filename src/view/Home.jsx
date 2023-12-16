@@ -1,4 +1,4 @@
-import { Box, Button, Container, Typography } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 
 const Home = () => {
   return (
@@ -20,7 +20,9 @@ const Home = () => {
           profesionales apasionados por el desarrollo de software. Contáctame
           para crear juntos.
         </Typography>
-        <Button sx={{my:'1rem'}} component='a'>Curriculum Vitae</Button>
+        <Button sx={{ my: '1rem', right: 9 }} component='a'>
+          Curriculum Vitae
+        </Button>
       </Box>
     </section>
   )

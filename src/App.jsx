@@ -13,7 +13,7 @@ const App = () => {
         <Navbar />
       </NavLinksProvider>
 
-      <Container sx={{my: '3rem'}}>
+      <Container sx={{my: '2rem'}}>
         <Home/>
         <Projects/>
         <Skills/>
