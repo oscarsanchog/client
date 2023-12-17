@@ -9,8 +9,6 @@ import {
   Typography,
 } from '@mui/material'
 
-import { getProjects } from '../services/DB/getData'
-
 import GitHubIcon from '@mui/icons-material/GitHub'
 
 const Project = () => {
