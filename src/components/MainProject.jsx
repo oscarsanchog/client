@@ -1,48 +1,94 @@
 import {
   Box,
+  Button,
   Card,
   CardActionArea,
   CardActions,
   CardContent,
   CardMedia,
   IconButton,
+  Link,
   Typography,
 } from '@mui/material'
 
 import GitHubIcon from '@mui/icons-material/GitHub'
+import { useState } from 'react'
 
-const Project = () => {
+const MainProject = ({
+  id,
+  name,
+  description,
+  image,
+  link,
+  repository,
+  Technologies,
+}) => {
+  const [showFullDescription, setShowFullDescription] = useState(false)
+
   return (
-    <Card sx={{ transition: '0.2s', '&:hover': { transform: 'scale(1.05)' } }}>
-      <CardActionArea sx={{ display: 'flex', justifyContent: 'left' }}>
-        <CardMedia
-          component='img'
-          image='https://via.placeholder.com/200x200'
-          sx={{ width: '50rem', height: '25rem' }}
-        />
+    <Card
+      sx={{
+        transition: '0.2s',
+        '&:hover': { transform: 'scale(1.05)' },
+        mb: '4rem',
+      }}
+    >
+      <Box sx={{ display: 'flex', justifyContent: 'left' }}>
+        <Link href='https://moru.com.co/' target='_blank'>
+          <CardMedia
+            component='img'
+            image={image}
+            sx={{ width: '40rem', height: '25rem' }}
+          />
+        </Link>
 
-        <Box>
+        <Box m='auto'>
           <CardContent>
-            <Typography component='h3' variant='h4'>
-              Título
+            <Link href='https://moru.com.co/' target='_blank'>
+              <Typography
+                textAlign='center'
+                mb='1rem'
+                component='h3'
+                variant='h4'
+              >
+                {name}
+              </Typography>
+            </Link>
+
+            <Typography
+              component='h5'
+              fontStyle='italic'
+              textAlign='center'
+              mb='1rem'
+              variant='subtitle'
+            >
+              2023
             </Typography>
 
-            <Typography maxWidth='20rem' component='p' variant='body'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-              labore, earum voluptatem voluptatum reprehenderit dolorum delectus
-              saepe tenetur porro quibusdam quod et officia. Voluptatem nam
-              perspiciatis officiis fugiat vitae dicta!
+            <Typography mb='1rem' maxWidth='20rem' component='p' variant='body'>
+              {showFullDescription
+                ? description
+                : `${description.slice(0, 73)}...`}
             </Typography>
+
+            <Button
+              sx={{ margin: 'auto', display: 'block' }}
+              onClick={() => setShowFullDescription(!showFullDescription)}
+            >
+              {showFullDescription ? 'Ver menos' : 'Ver más'}
+            </Button>
           </CardContent>
 
           <CardActions>
-            <IconButton>
-              <GitHubIcon sx={{ m: 'auto' }} />
-            </IconButton>
+            {repository && (
+              <IconButton>
+                <GitHubIcon />
+              </IconButton>
+            )}
           </CardActions>
         </Box>
-      </CardActionArea>
+      </Box>
     </Card>
   )
 }
-export default Project
+export default MainProject

@@ -14,7 +14,7 @@ const Projects = () => {
 
   return (
     <section id='projects'>
-      <Typography mb='2rem' component='h2' variant='h3'>
+      <Typography mb='3rem' component='h2' variant='h3'>
         Proyectos
       </Typography>
       {mainProjects.map(
@@ -27,7 +27,7 @@ const Projects = () => {
               image={image}
               link={link}
               repository={repository}
-              technologies={Technologies}
+              Technologies={Technologies}
             />
           )
         }
