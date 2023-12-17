@@ -9,14 +9,13 @@ import {
   Typography,
 } from '@mui/material'
 
-import { getProjects } from '../services/DB/get'
+import { getProjects } from '../services/DB/getData'
 
 import GitHubIcon from '@mui/icons-material/GitHub'
 
 const Project = () => {
-  
   return (
-    <Card sx={{transition:'0.2s', '&:hover': { transform: 'scale(1.05)'}}}>
+    <Card sx={{ transition: '0.2s', '&:hover': { transform: 'scale(1.05)' } }}>
       <CardActionArea sx={{ display: 'flex', justifyContent: 'left' }}>
         <CardMedia
           component='img'
@@ -25,7 +24,6 @@ const Project = () => {
         />
 
         <Box>
-          
           <CardContent>
             <Typography component='h3' variant='h4'>
               Título
