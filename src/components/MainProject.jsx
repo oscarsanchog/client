@@ -9,9 +9,12 @@ import {
   Typography,
 } from '@mui/material'
 
+import { getProjects } from '../services/DB/get'
+
 import GitHubIcon from '@mui/icons-material/GitHub'
 
 const Project = () => {
+  
   return (
     <Card sx={{transition:'0.2s', '&:hover': { transform: 'scale(1.05)'}}}>
       <CardActionArea sx={{ display: 'flex', justifyContent: 'left' }}>
@@ -22,6 +25,7 @@ const Project = () => {
         />
 
         <Box>
+          
           <CardContent>
             <Typography component='h3' variant='h4'>
               Título
