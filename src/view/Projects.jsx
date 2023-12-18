@@ -1,6 +1,7 @@
 import { Typography } from '@mui/material'
 import MainProject from '../components/MainProject'
 import { useSelector } from 'react-redux'
+import Project from '../components/Project'
 
 const Projects = () => {
   const mainProjects = useSelector((state) =>
@@ -10,7 +11,6 @@ const Projects = () => {
       )
     })
   )
-  console.log(mainProjects)
 
   return (
     <section id='projects'>
@@ -18,17 +18,24 @@ const Projects = () => {
         Proyectos
       </Typography>
       {mainProjects.map(
-        ({ id, name, description, image, link, repository, Technologies }) => {
+        (
+          { id, name, description, image, link, repository, Technologies },
+          index
+        ) => {
           return (
-            <MainProject
-              key={id}
-              name={name}
-              description={description}
-              image={image}
-              link={link}
-              repository={repository}
-              Technologies={Technologies}
-            />
+            <>
+              <MainProject
+                key={id}
+                name={name}
+                description={description}
+                image={image}
+                link={link}
+                repository={repository}
+                Technologies={Technologies}
+                position={index}
+              />
+              <Project />
+            </>
           )
         }
       )}
