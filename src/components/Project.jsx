@@ -4,7 +4,6 @@ import {
   CardActions,
   CardContent,
   CardMedia,
-  IconButton,
   Link,
   Typography,
 } from '@mui/material'
@@ -33,7 +32,7 @@ const Project = ({
       }}
     >
       <Link href={link} target='_blank'>
-        <CardMedia component='img' image={image} title={name} />
+        <CardMedia height='250rem' component='img' image={image} title={name} />
       </Link>
 
       <CardContent>
