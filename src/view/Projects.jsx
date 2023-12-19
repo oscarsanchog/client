@@ -11,6 +11,13 @@ const Projects = () => {
       )
     })
   )
+  const projects = useSelector((state) =>
+    state.projects.filter((project) => {
+      return (
+        project.name !== 'Mōru App' && project.name !== 'Driver Race Finder'
+      )
+    })
+  )
 
   return (
     <section id='projects'>
@@ -23,19 +30,31 @@ const Projects = () => {
           index
         ) => {
           return (
-            <>
-              <MainProject
-                key={id}
-                name={name}
-                description={description}
-                image={image}
-                link={link}
-                repository={repository}
-                Technologies={Technologies}
-                position={index}
-              />
-              <Project />
-            </>
+            <MainProject
+              key={id}
+              name={name}
+              description={description}
+              image={image}
+              link={link}
+              repository={repository}
+              Technologies={Technologies}
+              position={index}
+            />
+          )
+        }
+      )}
+      {projects.map(
+        ({ id, name, description, image, link, repository, Technologies }) => {
+          return (
+            <Project
+              key={id}
+              name={name}
+              description={description}
+              image={image}
+              link={link}
+              repository={repository}
+              Technologies={Technologies}
+            />
           )
         }
       )}

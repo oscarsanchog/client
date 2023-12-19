@@ -41,6 +41,7 @@ const MainProject = ({
               <CardMedia
                 component='img'
                 image={image}
+                title={name}
                 sx={{ width: '40rem', height: '25rem' }}
               />
             </Link>
