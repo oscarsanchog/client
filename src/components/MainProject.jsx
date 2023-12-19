@@ -88,11 +88,11 @@ const MainProject = ({
                 </Button>
               </CardContent>
 
-              <CardActions>
+              <CardActions >
                 {repository && (
-                  <IconButton sx={{margin:'auto'}}>
-                    <GitHubIcon/>
-                  </IconButton>
+                  <Link href={repository} target='_blank'  component='a' sx={{margin:'auto'}}>
+                    <GitHubIcon />
+                  </Link>
                 )}
               </CardActions>
             </Box>
@@ -143,9 +143,9 @@ const MainProject = ({
 
               <CardActions >
                 {repository && (
-                  <IconButton sx={{margin:'auto'}}>
+                  <Link href={repository} target='_blank'  component='a' sx={{margin:'auto'}}>
                     <GitHubIcon />
-                  </IconButton>
+                  </Link>
                 )}
               </CardActions>
             </Box>
